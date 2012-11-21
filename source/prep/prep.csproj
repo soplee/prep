@@ -88,6 +88,13 @@
     <Compile Include="utility\filtering\PropertyAccessor.cs" />
     <Compile Include="utility\filtering\PropertyMatch.cs" />
     <Compile Include="utility\ranges\IContainValues.cs" />
+    <Compile Include="utility\sorting\ComparerExtensions.cs" />
+    <Compile Include="utility\sorting\ComparerWhenTypeIsComparable.cs" />
+    <Compile Include="utility\sorting\CompositeComparer.cs" />
+    <Compile Include="utility\sorting\NegatingComparer.cs" />
+    <Compile Include="utility\sorting\RankingComparer.cs" />
+    <Compile Include="utility\sorting\Sort.cs" />
+    <Compile Include="utility\sorting\SortingBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
