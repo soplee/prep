@@ -1,15 +1,16 @@
+using System;
 using System.Collections.Generic;
 using prep.utility.filtering;
 
 namespace prep.utility.sorting
 {
-//	public static class ComparerExtensions
-//	{
-//		public static IComparer<ItemToSort> then_by<Property, ItemToSort>(this SortingBuilder<ItemToSort, Property> builder, PropertyAccessor<ItemToSort, Property> accessor)
-//		{
-//			var comparer2 = new SimpleComparer<ItemToSort>(true);
-//
-//			return new CompositeComparer<ItemToSort>(builder, comparer2);
-//		}
-//	}
+  public static class ComparerExtensions
+  {
+    public static IComparer<ItemToSort> then_by<Property, ItemToSort>(this IComparer<ItemToSort> first,
+                                                                      PropertyAccessor<ItemToSort, Property> accessor)
+      where Property : IComparable<Property>
+    {
+      return new CompositeComparer<ItemToSort>(first, Sort<ItemToSort>.by(accessor));
+    }
+  }
 }

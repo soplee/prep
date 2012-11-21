@@ -4,20 +4,20 @@ namespace prep.utility.sorting
 {
 	public class CompositeComparer<ItemToSort> : IComparer<ItemToSort>
 	{
-		readonly IComparer<ItemToSort> _first;
-		readonly IComparer<ItemToSort> _second;
+		IComparer<ItemToSort> first;
+		IComparer<ItemToSort> second;
 
 		public CompositeComparer(IComparer<ItemToSort> first, IComparer<ItemToSort> second)
 		{
-			_first = first;
-			_second = second;
+			this.first = first;
+			this.second = second;
 		}
 
 		public int Compare(ItemToSort x, ItemToSort y)
 		{
-			var result = _first.Compare(x, y);
+			var result = first.Compare(x, y);
 
-			return result == 0 ? _second.Compare(x, y) : result;
+			return result == 0 ? second.Compare(x, y) : result;
 		}
 	}
 }

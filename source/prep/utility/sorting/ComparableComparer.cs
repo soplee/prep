@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace prep.utility.sorting
 {
-	public class ComparerWhenTypeIsComparable<PropertyType> : IComparer<PropertyType> where PropertyType : IComparable<PropertyType>
+	public class ComparableComparer<PropertyType> : IComparer<PropertyType> where PropertyType : IComparable<PropertyType>
 	{
 		public int Compare(PropertyType x, PropertyType y)
 		{
